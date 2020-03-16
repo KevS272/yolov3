@@ -1,0 +1,10 @@
+Inference:
+python3 detect.py --cfg ./cfg/yolo4cones.cfg --weights ./converted.weights --source benchmarking/bench.jpg --names ./data/classes.names
+
+Train:
+
+Train without Batch size:
+python train.py --data elb_data.data --cfg ./cfg/yolo4cones.cfg --weights ''
+
+Convert .pt to .weights:
+python3  -c "from models import *; convert('cfg/yolo4cones.cfg', 'weights/best.pt')"
